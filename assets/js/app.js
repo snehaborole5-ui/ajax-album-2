@@ -116,7 +116,7 @@ function createNewcard(newobj, res){
 }
 
 function OnEdit(ele){
-  let EditId = ele.closest('.col-md-4').id
+  let EditId = ele.closest('.col-md-3').id
   spinner.classList.remove('d-none')
 
   localStorage.setItem('EditId', EditId)
@@ -181,7 +181,7 @@ function onupdate(){
 }
 
 function OnRemove(ele){
-  let removeId = ele.closest('.col-md-4').id
+  let removeId = ele.closest('.col-md-3').id
   Swal.fire({
     title: `Are you sure you want to delete album ${removeId}?`,
     text: "You won't be able to revert this!",
@@ -201,7 +201,7 @@ function OnRemove(ele){
 
       xhr.onload = function() {
         if(xhr.status >= 200 && xhr.status <= 299){
-          ele.closest('.col-md-4').remove()
+          ele.closest('.col-md-3').remove()
           snackbar(`The Album id ${removeId} Is Removed Successfully!!`, 'success')
         } else {
           snackbar('Deletion Failed!', 'error')
